@@ -10,7 +10,7 @@ Source information
 
 This section tracks the u-boot revision within this repo.
 
-* **Files:** u-boot.img MLO
+* **Files:** u-boot.img u-boot.bin MLO
 	* **Date:** Fri Oct 7 22:02:10 2016 -0400
 	* **GIT Hash:** f5fd45ff64e28a73499548358e3d1ceda0de7daf
 	* **Known Issues:** None at this time.
