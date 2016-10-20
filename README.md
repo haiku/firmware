@@ -6,9 +6,11 @@ by Haiku and other operating systems.
 
 ----------
 
-> *Notice:* Licenses are **strictly** followed in this repository. Any binaries **must* have a documented source location if the license requires it.
+> *Notice:* Licenses are **strictly** followed in this repository.
+> Any binaries **must** have a documented source location if the license requires it.
 
 Directories
 -------------
 
 * arm - ARM firmwares and u-boot artifacts
+
