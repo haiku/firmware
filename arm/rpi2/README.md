@@ -16,3 +16,4 @@ This section tracks the u-boot revision within this repo.
   * **Date:** Thu Feb 9 14:54:09 2017 -0500
   * **GIT Hash:** f1cc97764be4383d2aeb56d5ba5415439a1d5c97
 * **Known Issues:** None at this time.
+* **Build Command:** make rpi2_defconfig; make -j4 -s
