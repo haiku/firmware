@@ -1,5 +1,6 @@
 [
 	{
+		"arch": "arm",
 		"id": "rpi2",
 		"soc": "BCM2836",
 		"name": "Raspberry Pi 2",
@@ -13,6 +14,7 @@
 		]
 	},
 	{
+		"arch": "arm",
 		"id": "rpi3",
 		"soc": "BCM2837",
 		"name": "Raspberry Pi 3",
