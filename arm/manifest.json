@@ -1,0 +1,28 @@
+[
+	{
+		"id": "rpi2",
+		"soc": "BCM2836",
+		"name": "Raspberry Pi 2",
+		"files": [
+			"https://github.com/haiku/firmware/raw/master/arm/rpi2/README.md",
+			"https://github.com/haiku/firmware/raw/master/arm/rpi2/config.txt",
+			"https://github.com/haiku/firmware/raw/master/arm/rpi2/u-boot.bin",
+			"https://github.com/raspberrypi/firmware/raw/master/boot/bootcode.bin",
+			"https://github.com/raspberrypi/firmware/raw/master/boot/start.elf",
+			"https://github.com/raspberrypi/firmware/raw/master/boot/LICENCE.broadcom"
+		]
+	},
+	{
+		"id": "rpi3",
+		"soc": "BCM2837",
+		"name": "Raspberry Pi 3",
+		"files": [
+			"https://github.com/haiku/firmware/raw/master/arm/rpi3/README.md",
+			"https://github.com/haiku/firmware/raw/master/arm/rpi3/config.txt",
+			"https://github.com/haiku/firmware/raw/master/arm/rpi3/u-boot.bin",
+			"https://github.com/raspberrypi/firmware/raw/master/boot/bootcode.bin",
+			"https://github.com/raspberrypi/firmware/raw/master/boot/start.elf",
+			"https://github.com/raspberrypi/firmware/raw/master/boot/LICENCE.broadcom"
+		]
+	}
+]
