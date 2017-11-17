@@ -1,0 +1,72 @@
+#!/bin/bash
+
+# Compile u-boot for a bunch of ARM boards we want and
+# keep detailed records of where the code came from.
+
+TARGET_ARCH=$1
+
+if [ ! -n "$TARGET_ARCH" ]; then
+	echo "Usage: $0 <arch>"
+	exit 1
+fi
+
+if ! [ -x "$(command -v $TARGET_ARCH-unknown-haiku-ld)" ]; then
+	echo "Error: Haiku's cross-compiler missing from PATH"
+	exit 1
+fi
+
+if ! [ -d "$TARGET_ARCH" ]; then
+	echo "Error: Unable to locate ./$TARGET_ARCH directory!"
+	exit 1
+fi
+echo "Beginning $TARGET_ARCH build..."
+
+TMP="/tmp/$TARGET_ARCH-build"
+GIT_REPO="git://git.denx.de/u-boot.git"
+
+echo "Cloning sources..."
+git clone $GIT_REPO $TMP
+GIT_DATE=$(git --work-tree /tmp/arm-build log --name-status HEAD^..HEAD | grep "Date:" | sed -e s/Date:\ *//g)
+GIT_HASH=$(git --work-tree /tmp/arm-build log --name-status HEAD^..HEAD | grep "commit" | awk '{ print $2 }')
+
+WORK_QUEUE=$(find $TARGET_ARCH/ -maxdepth 1)
+for dir in $(find $TARGET_ARCH/ -mindepth 1 -type d); do
+	BUILD_CONFIG="$dir/.build"
+	if [ ! -f $BUILD_CONFIG ]; then
+		echo "Skipping $dir due to lack of build manifest"
+		continue;
+	fi
+	CONFIG=$(grep "config:" $BUILD_CONFIG | cut -d ":" -f2)
+	NAME=$(grep "name:" $BUILD_CONFIG | cut -d ":" -f2)
+
+	make -C $TMP clean
+	make -C $TMP $CONFIG
+	if [ $? -ne 0 ]; then
+		echo "Error configuring $dir"
+		continue;
+	fi
+	ARCH=$TARGET_ARCH CROSS_COMPILE=$TARGET_ARCH-unknown-haiku- make -C $TMP -j2
+	if [ $? -ne 0 ]; then
+		echo "Error building $dir"
+		continue;
+	fi
+
+	echo "Collecting artifacts..."
+	FILES=""
+	ARTIFACTS=$(find $TMP -name "u-boot-*-with-spl.bin" -or -name "u-boot.bin" -or -name "MLO")
+	for x in $ARTIFACTS; do
+		cp -f $x $dir/
+		FILES="$FILES $(basename $x)"
+	done
+
+	# Populate README.md
+	cp tools/README.template $dir/README.md
+	sed -i "s^%%DATE%%^$(date)^g" $dir/README.md
+	sed -i "s^%%GIT_REPO%%^$GIT_REPO^g" $dir/README.md
+	sed -i "s^%%GIT_DATE%%^$GIT_DATE^g" $dir/README.md
+	sed -i "s^%%GIT_HASH%%^$GIT_HASH^g" $dir/README.md
+	sed -i "s^%%BOARD%%^$NAME^g" $dir/README.md
+	sed -i "s^%%FILES%%^$FILES^g" $dir/README.md
+	sed -i "s^%%CONFIG%%^$CONFIG^g" $dir/README.md
+	sed -i "s^%%TARGET_ARCH%%^$TARGET_ARCH^g" $dir/README.md
+done

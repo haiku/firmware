@@ -14,3 +14,11 @@ Directories
 
 * arm - ARM firmwares and u-boot artifacts
 
+Build
+-------------
+
+To rebuild the u-boot sources:
+
+* Place the architecture's cross compiler binaries into PATH
+* From the root, run ./tools/build <arch>
+* manifest.json is updated by hand to reflect what is needed for each board.
