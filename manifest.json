@@ -37,5 +37,18 @@
 			"https://github.com/haiku/firmware/raw/master/arm/boneblack/u-boot.bin",
 			"https://github.com/haiku/firmware/raw/master/arm/boneblack/README.md"
 		]
+	},
+	{
+		"arch": "arm",
+		"id": "orangepi_one",
+		"soc": "H3",
+		"name": "OrangePi One",
+		"files": [
+			"https://github.com/haiku/firmware/raw/master/arm/orangepi_one/u-boot.bin",
+			"https://github.com/haiku/firmware/raw/master/arm/orangepi_one/README.md"
+		],
+		"write": [
+			["https://github.com/haiku/firmware/raw/master/arm/orangepi_one/u-boot-sunxi-with-spl.bin", 8192]
+		]
 	}
 ]
