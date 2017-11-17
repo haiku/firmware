@@ -6,15 +6,15 @@ These binaries were compiled from the stock u-boot sources.
 
 Source information
 -------------
-> *Last Update:* Thu Nov 16 19:21:29 CST 2017
+> *Last Update:* Thu Nov 16 19:32:05 CST 2017
 
 This section tracks the u-boot revision within this repo.
 
 * **Files:**  u-boot.bin
   * **License:** GPLv2
   * **Source Code:** git://git.denx.de/u-boot.git
-  * **Date:** Fri Oct 20 13:07:13 2017 -0500
-  * **GIT Hash:** 098ffa1f97520a8cfc947d00dca1beb46d0c2311
+  * **Date:** Mon Nov 13 20:08:06 2017 -0500
+  * **GIT Hash:** c253573f3e269fd9a24ee6684d87dd91106018a5
 * **Toolchain:** http://cgit.haiku-os.org/buildtools/
 * **Build Commands:**
   * make rpi_3_32b_defconfig
