@@ -4,6 +4,8 @@
 This directory contains %%BOARD%% u-boot binaries.
 These binaries were compiled from the stock u-boot sources.
 
+Hardware Information: <%%URL%%>
+
 Source information
 -------------
 > *Last Update:* %%DATE%%

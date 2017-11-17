@@ -1,2 +1,3 @@
-config:orangepi_one_defconfig
-name:OrangePi One
+config=orangepi_one_defconfig
+name=OrangePi One
+url=http://www.orangepi.org/orangepione

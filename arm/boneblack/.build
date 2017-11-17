@@ -1,2 +1,3 @@
-config:am335x_boneblack_defconfig
-name:BeagleBone Black
+config=am335x_boneblack_defconfig
+name=BeagleBone Black
+url=https://beagleboard.org/black
