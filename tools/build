@@ -26,8 +26,8 @@ GIT_REPO="git://git.denx.de/u-boot.git"
 
 echo "Cloning sources..."
 git clone $GIT_REPO $TMP
-GIT_DATE=$(git -C /tmp/arm-build log --name-status HEAD^..HEAD | grep "Date:" | sed -e s/Date:\ *//g)
-GIT_HASH=$(git -C /tmp/arm-build log --name-status HEAD^..HEAD | grep "commit" | awk '{ print $2 }')
+GIT_DATE=$(git -C $TMP log -1 --format=%cd)
+GIT_HASH=$(git -C $TMP log -1 --format=%H)
 
 WORK_QUEUE=$(find $TARGET_ARCH/ -maxdepth 1)
 for dir in $(find $TARGET_ARCH/ -mindepth 1 -type d); do
