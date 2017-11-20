@@ -34,7 +34,7 @@
 		"name": "BeagleBone Black",
 		"files": [
 			"https://github.com/haiku/firmware/raw/master/arm/boneblack/MLO",
-			"https://github.com/haiku/firmware/raw/master/arm/boneblack/u-boot.bin",
+			"https://github.com/haiku/firmware/raw/master/arm/boneblack/u-boot.img",
 			"https://github.com/haiku/firmware/raw/master/arm/boneblack/README.md"
 		]
 	},
