@@ -28,4 +28,5 @@ License
 ------------
 
 [![GPLv2 License](https://img.shields.io/badge/license-GPL--2.0+-red.svg)](LICENSE)
+
 This repository contains sources and binaries from u-boot which are licensed under GPLv2.
