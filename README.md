@@ -12,7 +12,8 @@ by Haiku and other operating systems.
 Directories
 -------------
 
-* arm - ARM firmwares and u-boot artifacts
+* arm - ARMv7 firmwares and u-boot artifacts.
+* aarch64 - ARMv8 firmwares and u-boot artifacts.
 
 Build
 -------------
@@ -20,5 +21,5 @@ Build
 To rebuild the u-boot sources:
 
 * Place the architecture's cross compiler binaries into your PATH
-* From the root, run ./tools/build &gt;arch&lt;
+* From the root, run ./tools/build &lt;arch&gt;
 * manifest.json is updated by hand to reflect what is needed for each board.
