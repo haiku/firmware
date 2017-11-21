@@ -45,10 +45,8 @@
 		"name": "OrangePi One",
 		"files": [
 			"https://github.com/haiku/firmware/raw/master/arm/orangepi_one/u-boot.bin",
-			"https://github.com/haiku/firmware/raw/master/arm/orangepi_one/README.md"
-		],
-		"write": [
-			["https://github.com/haiku/firmware/raw/master/arm/orangepi_one/u-boot-sunxi-with-spl.bin", 8192]
+			"https://github.com/haiku/firmware/raw/master/arm/orangepi_one/README.md",
+			"8192,https://github.com/haiku/firmware/raw/master/arm/orangepi_one/u-boot-sunxi-with-spl.bin"
 		]
 	}
 ]
