@@ -10,8 +10,17 @@ if [ ! -n "$TARGET_ARCH" ]; then
 	exit 1
 fi
 
-if ! [ -x "$(command -v $TARGET_ARCH-unknown-haiku-ld)" ]; then
-	echo "Error: Haiku's cross-compiler missing from PATH"
+# Locate acceptible cross-compiler toolchain
+CROSS_TOOL_OS=""
+for i in unknown-haiku linux-gnu; do
+	if [ -x "$(command -v $TARGET_ARCH-$i-ld)" ]; then
+		echo "Found $i cross compiler!"
+		CROSS_TOOL_OS=$i
+	fi
+done
+
+if ! [ -n "$CROSS_TOOL_OS" ]; then
+	echo "Error: Unable to locate compatible cross-compiler in PATH!"
 	exit 1
 fi
 
@@ -48,7 +57,7 @@ for dir in $(find $TARGET_ARCH/ -mindepth 1 -type d); do
 		echo "Error configuring $dir"
 		continue;
 	fi
-	ARCH=$TARGET_ARCH CROSS_COMPILE=$TARGET_ARCH-unknown-haiku- make -C $TMP -j2
+	ARCH=$TARGET_ARCH CROSS_COMPILE=$TARGET_ARCH-$CROSS_TOOL_OS- make -C $TMP -j2
 	if [ $? -ne 0 ]; then
 		echo "Error building $dir"
 		continue;
@@ -56,7 +65,7 @@ for dir in $(find $TARGET_ARCH/ -mindepth 1 -type d); do
 
 	echo "Collecting artifacts..."
 	FILES=""
-	ARTIFACTS=$(find $TMP -name "u-boot-*-with-spl.bin" -or -name "u-boot.bin" -or -name "u-boot.img" -or -name "MLO")
+	ARTIFACTS=$(find $TMP -name "u-boot-*-with-spl.bin" -or -name "u-boot.bin" -or -name "u-boot.img" -or -name "MLO" -or -name "sunxi-spl.bin")
 	for x in $ARTIFACTS; do
 		cp -f $x $dir/
 		FILES="$FILES $(basename $x)"
@@ -73,4 +82,5 @@ for dir in $(find $TARGET_ARCH/ -mindepth 1 -type d); do
 	sed -i "s^%%FILES%%^$FILES^g" $dir/README.md
 	sed -i "s^%%CONFIG%%^$CONFIG^g" $dir/README.md
 	sed -i "s^%%TARGET_ARCH%%^$TARGET_ARCH^g" $dir/README.md
+	sed -i "s^%%CROSS_OS%%^$CROSS_TOOL_OS^g" $dir/README.md
 done
