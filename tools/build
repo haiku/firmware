@@ -12,7 +12,7 @@ fi
 
 # Locate acceptible cross-compiler toolchain
 CROSS_TOOL_OS=""
-for i in unknown-haiku linux-gnu; do
+for i in unknown-haiku none-eabi linux-gnu; do
 	if [ -x "$(command -v $TARGET_ARCH-$i-ld)" ]; then
 		echo "Found $i cross compiler!"
 		CROSS_TOOL_OS=$i
