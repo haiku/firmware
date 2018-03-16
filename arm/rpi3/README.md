@@ -8,16 +8,16 @@ Hardware Information: <https://www.raspberrypi.org>
 
 Source information
 -------------
-> *Last Update:* Mon Nov 20 17:48:52 CST 2017
+> *Last Update:* Fri Mar 16 09:23:08 CDT 2018
 
 This section tracks the u-boot revision within this repo.
 
 * **Files:**  u-boot.bin
   * **License:** GPLv2
   * **Source Code:** git://git.denx.de/u-boot.git
-  * **Date:** Mon Nov 20 11:46:08 2017 -0500
-  * **GIT Hash:** 69d3226530a0bb4945644778b903c5b95d858e30
+  * **Date:** Fri Mar 16 09:42:41 2018 -0400
+  * **GIT Hash:** f274f265668d43948f041f88e7b50b9639769d56
 * **Toolchain:** http://cgit.haiku-os.org/buildtools/
 * **Build Commands:**
   * make rpi_3_32b_defconfig
-  * ARCH=arm CROSS_COMPILE=arm-unknown-haiku- make
+  * ARCH=arm CROSS_COMPILE=arm-none-eabi- make
