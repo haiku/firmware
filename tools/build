@@ -38,8 +38,6 @@ git clone $GIT_REPO $TMP
 GIT_DATE=$(git -C $TMP log -1 --format=%cd)
 GIT_HASH=$(git -C $TMP log -1 --format=%H)
 
-CONFIG_PRELOAD='CONFIG_PRELOAD="test -e mmc 0 uEnv.txt && fatload mmc 0 ${scriptaddr} uEnv.txt && env import -t ${scriptaddr} ${filesize} && run uenvcmd"'
-
 WORK_QUEUE=$(find $TARGET_ARCH/ -maxdepth 1)
 for dir in $(find $TARGET_ARCH/ -mindepth 1 -type d); do
 	BUILD_CONFIG="$dir/.build"
@@ -52,9 +50,6 @@ for dir in $(find $TARGET_ARCH/ -mindepth 1 -type d); do
 	CONFIG=$(grep "config=" $BUILD_CONFIG | cut -d "=" -f2)
 	NAME=$(grep "name=" $BUILD_CONFIG | cut -d "=" -f2)
 	URL=$(grep "url=" $BUILD_CONFIG | cut -d "=" -f2)
-
-	# Gives us a non-binary entrypoint
-	echo "$CONFIG_PRELOAD" >> $TMP/configs/$CONFIG
 
 	make -C $TMP clean
 	make -C $TMP $CONFIG
@@ -88,7 +83,4 @@ for dir in $(find $TARGET_ARCH/ -mindepth 1 -type d); do
 	sed -i "s^%%CONFIG%%^$CONFIG^g" $dir/README.md
 	sed -i "s^%%TARGET_ARCH%%^$TARGET_ARCH^g" $dir/README.md
 	sed -i "s^%%CROSS_OS%%^$CROSS_TOOL_OS^g" $dir/README.md
-
-	echo "# Extra Config" >> $dir/README.md
-	echo "$CONFIG_PRELOAD" >> $dir/README.md
 done

@@ -21,4 +21,3 @@ This section tracks the u-boot revision within this repo.
 * **Build Commands:**
   * make %%CONFIG%%
   * ARCH=%%TARGET_ARCH%% CROSS_COMPILE=%%TARGET_ARCH%%-%%CROSS_OS%%- make
-
