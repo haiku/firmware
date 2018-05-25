@@ -48,5 +48,15 @@
 			"https://github.com/haiku/firmware/raw/master/arm/orangepi_one/README.md",
 			"8192,https://github.com/haiku/firmware/raw/master/arm/orangepi_one/u-boot-sunxi-with-spl.bin"
 		]
+	},
+	{
+		"arch": "arm",
+		"id": "tinkerboard",
+		"soc": "RK3288",
+		"name": "Asus Tinkerboard",
+		"files": [
+			"https://github.com/haiku/firmware/raw/master/arm/tinkerboard/README.md",
+			"32768,https://github.com/haiku/firmware/raw/master/arm/tinkerboard/u-boot.img"
+		]
 	}
 ]
