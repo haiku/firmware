@@ -8,15 +8,15 @@ Hardware Information: <https://www.raspberrypi.org>
 
 Source information
 -------------
-> *Last Update:* Fri Mar 16 09:23:08 CDT 2018
+> *Last Update:* Thu May 24 20:36:43 CDT 2018
 
 This section tracks the u-boot revision within this repo.
 
 * **Files:**  u-boot.bin
   * **License:** GPLv2
   * **Source Code:** git://git.denx.de/u-boot.git
-  * **Date:** Fri Mar 16 09:42:41 2018 -0400
-  * **GIT Hash:** f274f265668d43948f041f88e7b50b9639769d56
+  * **Date:** Thu May 24 09:54:25 2018 -0400
+  * **GIT Hash:** 8730d012c9bd92d6412b3ef6e33b40c5df00f225
 * **Toolchain:** http://cgit.haiku-os.org/buildtools/
 * **Build Commands:**
   * make rpi_3_32b_defconfig
