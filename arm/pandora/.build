@@ -1,0 +1,3 @@
+config=omap3_pandora_defconfig
+name=Pandora Handheld
+url=https://pyra-handheld.com
