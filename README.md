@@ -13,7 +13,7 @@ Directories
 -------------
 
 * arm - ARMv7 firmwares and u-boot artifacts.
-* aarch64 - ARMv8 firmwares and u-boot artifacts.
+* arm64 - ARMv8 firmwares and u-boot artifacts.
 
 Build
 -------------
