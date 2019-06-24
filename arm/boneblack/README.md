@@ -8,16 +8,16 @@ Hardware Information: <https://beagleboard.org/black>
 
 Source information
 -------------
-> *Last Update:* Thu May 24 20:35:05 CDT 2018
+> *Last Update:* Mon 24 Jun 2019 02:25:10 PM CDT
 
 This section tracks the u-boot revision within this repo.
 
-* **Files:**  MLO u-boot.img u-boot.bin
+* **Files:**  MLO u-boot.bin u-boot.img
   * **License:** GPLv2
   * **Source Code:** git://git.denx.de/u-boot.git
-  * **Date:** Thu May 24 09:54:25 2018 -0400
-  * **GIT Hash:** 8730d012c9bd92d6412b3ef6e33b40c5df00f225
+  * **Date:** Sat Jun 15 13:03:00 2019 -0400
+  * **GIT Hash:** 77f6e2dd0551d8a825bab391a1bd6b838874bcd4
 * **Toolchain:** http://cgit.haiku-os.org/buildtools/
 * **Build Commands:**
-  * make am335x_boneblack_defconfig
-  * ARCH=arm CROSS_COMPILE=arm-none-eabi- make
+  * make am335x_evm_defconfig
+  * ARCH=arm CROSS_COMPILE=arm-linux-gnu- make
