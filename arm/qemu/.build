@@ -1,0 +1,3 @@
+config=qemu_arm_defconfig
+name=QEMU ARM
+url=https://www.qemu.org
