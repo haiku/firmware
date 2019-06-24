@@ -8,7 +8,7 @@ Hardware Information: <http://www.friendlyarm.net/products/nanopi-neo>
 
 Source information
 -------------
-> *Last Update:* Mon 24 Jun 2019 02:05:15 PM CDT
+> *Last Update:* Mon 24 Jun 2019 02:22:37 PM CDT
 
 This section tracks the u-boot revision within this repo.
 
@@ -20,4 +20,4 @@ This section tracks the u-boot revision within this repo.
 * **Toolchain:** http://cgit.haiku-os.org/buildtools/
 * **Build Commands:**
   * make nanopi_neo2_defconfig
-  * ARCH=arm64 CROSS_COMPILE=arm64-aarch64-linux-gnu- make
+  * ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make
