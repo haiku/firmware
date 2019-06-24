@@ -10,16 +10,21 @@ if [ ! -n "$TARGET_ARCH" ]; then
 	exit 1
 fi
 
-# Locate acceptible cross-compiler toolchain
-CROSS_TOOL_OS=""
+### Locate acceptible cross-compiler toolchain
+TOOLCHAIN_ARCH=$TARGET_ARCH
+CROSS_TOOL_PREFIX=""
+# Alias arm64 == aarch64
+if [ "$TARGET_ARCH" == "arm64" ]; then
+	TOOLCHAIN_ARCH=aarch64
+fi
 for i in unknown-haiku none-eabi linux-gnu; do
-	if [ -x "$(command -v $TARGET_ARCH-$i-ld)" ]; then
+	if [ -x "$(command -v $TOOLCHAIN_ARCH-$i-ld)" ]; then
 		echo "Found $i cross compiler!"
-		CROSS_TOOL_OS=$i
+		CROSS_TOOL_PREFIX=$TOOLCHAIN_ARCH-$i
 	fi
 done
 
-if ! [ -n "$CROSS_TOOL_OS" ]; then
+if ! [ -n "$CROSS_TOOL_PREFIX" ]; then
 	echo "Error: Unable to locate compatible cross-compiler in PATH!"
 	exit 1
 fi
@@ -57,7 +62,7 @@ for dir in $(find $TARGET_ARCH/ -mindepth 1 -type d); do
 		echo "Error configuring $dir"
 		continue;
 	fi
-	ARCH=$TARGET_ARCH CROSS_COMPILE=$TARGET_ARCH-$CROSS_TOOL_OS- make -C $TMP -j2
+	ARCH=$TARGET_ARCH CROSS_COMPILE=$CROSS_TOOL_PREFIX- make -C $TMP -j2
 	if [ $? -ne 0 ]; then
 		echo "Error building $dir"
 		continue;
@@ -82,5 +87,5 @@ for dir in $(find $TARGET_ARCH/ -mindepth 1 -type d); do
 	sed -i "s^%%FILES%%^$FILES^g" $dir/README.md
 	sed -i "s^%%CONFIG%%^$CONFIG^g" $dir/README.md
 	sed -i "s^%%TARGET_ARCH%%^$TARGET_ARCH^g" $dir/README.md
-	sed -i "s^%%CROSS_OS%%^$CROSS_TOOL_OS^g" $dir/README.md
+	sed -i "s^%%CROSS_TOOL%%^$CROSS_TOOL_PREFIX^g" $dir/README.md
 done
