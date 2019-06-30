@@ -8,8 +8,8 @@
 			"https://github.com/haiku/firmware/raw/master/arm/rpi2/README.md",
 			"https://github.com/haiku/firmware/raw/master/arm/rpi2/config.txt",
 			"https://github.com/haiku/firmware/raw/master/arm/rpi2/u-boot.bin",
-			"https://github.com/raspberrypi/firmware/raw/master/boot/bootcode.bin",
-			"https://github.com/raspberrypi/firmware/raw/master/boot/start.elf",
+			"https://github.com/raspberrypi/firmware/raw/07937c7d48bcd44cc1015c6257ae2cfa5da51298/boot/bootcode.bin",
+			"https://github.com/raspberrypi/firmware/raw/07937c7d48bcd44cc1015c6257ae2cfa5da51298/boot/start.elf",
 			"https://github.com/raspberrypi/firmware/raw/master/boot/LICENCE.broadcom"
 		]
 	},
@@ -22,8 +22,8 @@
 			"https://github.com/haiku/firmware/raw/master/arm/rpi3/README.md",
 			"https://github.com/haiku/firmware/raw/master/arm/rpi3/config.txt",
 			"https://github.com/haiku/firmware/raw/master/arm/rpi3/u-boot.bin",
-			"https://github.com/raspberrypi/firmware/raw/master/boot/bootcode.bin",
-			"https://github.com/raspberrypi/firmware/raw/master/boot/start.elf",
+			"https://github.com/raspberrypi/firmware/raw/07937c7d48bcd44cc1015c6257ae2cfa5da51298/boot/bootcode.bin",
+			"https://github.com/raspberrypi/firmware/raw/07937c7d48bcd44cc1015c6257ae2cfa5da51298/boot/start.elf",
 			"https://github.com/raspberrypi/firmware/raw/master/boot/LICENCE.broadcom"
 		]
 	},
