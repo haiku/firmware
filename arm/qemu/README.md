@@ -8,16 +8,16 @@ Hardware Information: <https://www.qemu.org>
 
 Source information
 -------------
-> *Last Update:* Mon 24 Jun 2019 02:47:03 PM CDT
+> *Last Update:* Mon 16 Sep 2019 09:28:08 PM CDT
 
 This section tracks the u-boot revision within this repo.
 
-* **Files:**  u-boot.bin
+* **Files:**  u-boot.bin idbloader.img
   * **License:** GPLv2
   * **Source Code:** git://git.denx.de/u-boot.git
-  * **Date:** Sat Jun 15 13:03:00 2019 -0400
-  * **GIT Hash:** 77f6e2dd0551d8a825bab391a1bd6b838874bcd4
+  * **Date:** Sun Sep 15 21:14:26 2019 -0400
+  * **GIT Hash:** a314ec1bfda3d0db0ce8ae02dde1b06650d82e7f
 * **Toolchain:** http://cgit.haiku-os.org/buildtools/
 * **Build Commands:**
   * make qemu_arm_defconfig
-  * ARCH=arm CROSS_COMPILE=arm-linux-gnu- make
+  * ARCH=arm CROSS_COMPILE=arm-none-eabi- make
