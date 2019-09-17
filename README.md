@@ -24,6 +24,20 @@ To rebuild the u-boot sources:
 * From the root, run ./tools/build &lt;arch&gt;
 * manifest.json is updated by hand to reflect what is needed for each board.
 
+Manifest Format
+------------
+
+```manifest.json``` defines each SOC and what files are required to make an SD card bootable.
+
+* arch - Target architecture
+* id - board identification (should match directory name)
+* soc - Name of ARM SOC
+* name - Pretty name of board
+* files - Files to place on the initial FAT32 boot partition
+  * If the file url begins with a number, this is the offset it gets written to the disk device at.
+  * Example: 8192,https://github.com/blah.bin:
+    * ```dd if=blah.bin of=/sdcard bs=1024 seek=8```
+
 License
 ------------
 
