@@ -56,6 +56,8 @@ for dir in $(find $TARGET_ARCH/ -mindepth 1 -type d); do
 	NAME=$(grep "name=" $BUILD_CONFIG | cut -d "=" -f2)
 	URL=$(grep "url=" $BUILD_CONFIG | cut -d "=" -f2)
 
+	echo "Building $NAME..."
+
 	make -C $TMP clean
 	make -C $TMP $CONFIG
 	if [ $? -ne 0 ]; then
@@ -70,7 +72,7 @@ for dir in $(find $TARGET_ARCH/ -mindepth 1 -type d); do
 
 	echo "Collecting artifacts..."
 	FILES=""
-	ARTIFACTS=$(find $TMP -name "u-boot-*-with-spl.bin" -or -name "u-boot.bin" -or -name "u-boot.img" -or -name "MLO" -or -name "sunxi-spl.bin")
+	ARTIFACTS=$(find $TMP -name "u-boot-*-with-spl.bin" -or -name "u-boot.bin" -or -name "u-boot.img" -or -name "MLO" -or -name "sunxi-spl.bin" -or -name "idbloader.img")
 	for x in $ARTIFACTS; do
 		cp -f $x $dir/
 		FILES="$FILES $(basename $x)"
