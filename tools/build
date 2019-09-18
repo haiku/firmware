@@ -72,8 +72,9 @@ for dir in $(find $TARGET_ARCH/ -mindepth 1 -type d); do
 
 	echo "Collecting artifacts..."
 	FILES=""
-	ARTIFACTS=$(find $TMP -name "u-boot-*-with-spl.bin" -or -name "u-boot.bin" -or -name "u-boot.img" -or -name "MLO" -or -name "sunxi-spl.bin" -or -name "idbloader.img")
+	ARTIFACTS=$(find $TMP -name "u-boot.bin" -or -name "u-boot-sunxi*.bin" -or -name "u-boot.img" -or -name "MLO" -or -name "idbloader.img")
 	for x in $ARTIFACTS; do
+		echo "$NAME Artifact: $x"
 		cp -f $x $dir/
 		FILES="$FILES $(basename $x)"
 	done
