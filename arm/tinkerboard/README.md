@@ -8,16 +8,16 @@ Hardware Information: <https://www.asus.com/us/Single-Board-Computer/Tinker-Boar
 
 Source information
 -------------
-> *Last Update:* Mon 16 Sep 2019 09:25:20 PM CDT
+> *Last Update:* Wed 18 Sep 2019 09:27:29 AM CDT
 
 This section tracks the u-boot revision within this repo.
 
 * **Files:**  idbloader.img u-boot.img u-boot.bin
   * **License:** GPLv2
   * **Source Code:** git://git.denx.de/u-boot.git
-  * **Date:** Sun Sep 15 21:14:26 2019 -0400
-  * **GIT Hash:** a314ec1bfda3d0db0ce8ae02dde1b06650d82e7f
+  * **Date:** Mon Sep 16 13:13:45 2019 -0400
+  * **GIT Hash:** a9fa70b7b7167487affc5d919e541872c99e814b
 * **Toolchain:** http://cgit.haiku-os.org/buildtools/
 * **Build Commands:**
   * make tinker-rk3288_defconfig
-  * ARCH=arm CROSS_COMPILE=arm-none-eabi- make
+  * ARCH=arm CROSS_COMPILE=arm-unknown-haiku- make

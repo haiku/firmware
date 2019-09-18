@@ -8,16 +8,16 @@ Hardware Information: <http://www.friendlyarm.net/products/nanopi-neo>
 
 Source information
 -------------
-> *Last Update:* Mon 16 Sep 2019 09:26:37 PM CDT
+> *Last Update:* Wed 18 Sep 2019 09:28:45 AM CDT
 
 This section tracks the u-boot revision within this repo.
 
-* **Files:**  u-boot-sunxi-with-spl.bin u-boot.img u-boot.bin idbloader.img sunxi-spl.bin
+* **Files:**  u-boot-sunxi-with-spl.bin u-boot.img u-boot.bin idbloader.img
   * **License:** GPLv2
   * **Source Code:** git://git.denx.de/u-boot.git
-  * **Date:** Sun Sep 15 21:14:26 2019 -0400
-  * **GIT Hash:** a314ec1bfda3d0db0ce8ae02dde1b06650d82e7f
+  * **Date:** Mon Sep 16 13:13:45 2019 -0400
+  * **GIT Hash:** a9fa70b7b7167487affc5d919e541872c99e814b
 * **Toolchain:** http://cgit.haiku-os.org/buildtools/
 * **Build Commands:**
   * make nanopi_neo_defconfig
-  * ARCH=arm CROSS_COMPILE=arm-none-eabi- make
+  * ARCH=arm CROSS_COMPILE=arm-unknown-haiku- make
