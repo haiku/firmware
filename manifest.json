@@ -68,7 +68,7 @@
 		"files": [
 			"https://github.com/haiku/firmware/raw/master/arm/tinkerboard/README.md",
 			"64,https://github.com/haiku/firmware/raw/master/arm/tinkerboard/idbloader.img",
-			"32768,https://github.com/haiku/firmware/raw/master/arm/tinkerboard/u-boot.img"
+			"16384,https://github.com/haiku/firmware/raw/master/arm/tinkerboard/u-boot-dtb.img"
 		]
 	}
 ]
