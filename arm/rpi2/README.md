@@ -8,15 +8,15 @@ Hardware Information: <https://www.raspberrypi.org>
 
 Source information
 -------------
-> *Last Update:* Wed 18 Sep 2019 09:30:36 AM CDT
+> *Last Update:* Sat 21 Sep 2019 02:23:07 PM CDT
 
 This section tracks the u-boot revision within this repo.
 
-* **Files:**  u-boot.bin idbloader.img
+* **Files:**  u-boot.bin
   * **License:** GPLv2
   * **Source Code:** git://git.denx.de/u-boot.git
-  * **Date:** Mon Sep 16 13:13:45 2019 -0400
-  * **GIT Hash:** a9fa70b7b7167487affc5d919e541872c99e814b
+  * **Date:** Fri Sep 20 17:43:33 2019 -0400
+  * **GIT Hash:** d6c7309f561ac832c080e5ec07b0af9c8da319a8
 * **Toolchain:** http://cgit.haiku-os.org/buildtools/
 * **Build Commands:**
   * make rpi_2_defconfig
