@@ -1,3 +1,4 @@
 config=rpi_2_defconfig
 name=Raspberry Pi 2
 url=https://www.raspberrypi.org
+artifacts=u-boot.bin

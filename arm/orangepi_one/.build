@@ -1,3 +1,4 @@
 config=orangepi_one_defconfig
 name=OrangePi One
 url=http://www.orangepi.org/orangepione
+artifacts=u-boot.bin u-boot-sunxi-with-spl.bin

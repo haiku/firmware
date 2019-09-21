@@ -56,6 +56,8 @@ for dir in $(find $TARGET_ARCH/ -mindepth 1 -type d); do
 	CONFIG=$(grep "config=" $BUILD_CONFIG | cut -d "=" -f2)
 	NAME=$(grep "name=" $BUILD_CONFIG | cut -d "=" -f2)
 	URL=$(grep "url=" $BUILD_CONFIG | cut -d "=" -f2)
+	ARTIFACTS=$(grep "artifacts=" $BUILD_CONFIG | cut -d "=" -f2)
+	EXTRA=$(grep "extra=" $BUILD_CONFIG | cut -d "=" -f2)
 
 	echo "Building $NAME..."
 
@@ -73,11 +75,10 @@ for dir in $(find $TARGET_ARCH/ -mindepth 1 -type d); do
 
 	echo "Collecting artifacts..."
 	FILES=""
-	ARTIFACTS=$(find $TMP -name "u-boot.bin" -or -name "u-boot-sunxi*.bin" -or -name "u-boot.img" -or -name "MLO" -or -name "idbloader.img")
 	for x in $ARTIFACTS; do
-		echo "$NAME Artifact: $x"
-		cp -f $x $dir/
-		FILES="$FILES $(basename $x)"
+		echo "Searching for $x..."
+		find $TMP -name "$x" -exec cp -f {} $dir/ \;
+		FILES="$FILES $x"
 	done
 
 	# Populate README.md

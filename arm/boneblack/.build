@@ -1,3 +1,4 @@
 config=am335x_evm_defconfig
 name=BeagleBone Black
 url=https://beagleboard.org/black
+artifacts=u-boot.img MLO

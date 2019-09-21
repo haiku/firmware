@@ -1,3 +1,4 @@
 config=qemu_arm_defconfig
 name=QEMU ARM
 url=https://www.qemu.org
+artifacts=u-boot.bin

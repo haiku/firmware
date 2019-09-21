@@ -40,6 +40,17 @@
 	},
 	{
 		"arch": "arm",
+		"id": "nanopi_neo",
+		"soc": "H3",
+		"name": "NanoPi Neo",
+		"files": [
+			"https://github.com/haiku/firmware/raw/master/arm/nanopi_neo/u-boot.bin",
+			"https://github.com/haiku/firmware/raw/master/arm/nanopi_neo/README.md",
+			"8192,https://github.com/haiku/firmware/raw/master/arm/nanopi_neo/u-boot-sunxi-with-spl.bin"
+		]
+	},
+	{
+		"arch": "arm",
 		"id": "orangepi_one",
 		"soc": "H3",
 		"name": "OrangePi One",
