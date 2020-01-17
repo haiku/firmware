@@ -29,6 +29,19 @@
 	},
 	{
 		"arch": "arm",
+		"id": "rpi4",
+		"soc": "BCM2711",
+		"name": "Raspberry Pi 4",
+		"files": [
+			"https://github.com/haiku/firmware/raw/master/arm/rpi4/README.md",
+			"https://github.com/haiku/firmware/raw/master/arm/rpi4/config.txt",
+			"https://github.com/haiku/firmware/raw/master/arm/rpi4/u-boot.bin",
+			"https://github.com/raspberrypi/firmware/raw/master/boot/start.elf",
+			"https://github.com/raspberrypi/firmware/raw/master/boot/LICENCE.broadcom"
+		]
+	},
+	{
+		"arch": "arm",
 		"id": "boneblack",
 		"soc": "AM335x",
 		"name": "BeagleBone Black",
