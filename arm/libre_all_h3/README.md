@@ -1,14 +1,14 @@
-NanoPi NEO u-boot binaries
+Libre ALL-H3-CC u-boot binaries
 ===================
 
-This directory contains NanoPi NEO u-boot binaries.
+This directory contains Libre ALL-H3-CC u-boot binaries.
 These binaries were compiled from the stock u-boot sources.
 
-Hardware Information: <http://www.friendlyarm.net/products/nanopi-neo>
+Hardware Information: <https://libre.computer/products/boards/all-h3-cc/>
 
 Source information
 -------------
-> *Last Update:* Thu 16 Jan 2020 08:14:09 PM CST
+> *Last Update:* Thu 16 Jan 2020 08:16:53 PM CST
 
 This section tracks the u-boot revision within this repo.
 
@@ -19,5 +19,5 @@ This section tracks the u-boot revision within this repo.
   * **GIT Hash:** d7bb6aceb2e99a832efbb96f9bf480bf95602192
 * **Toolchain:** http://cgit.haiku-os.org/buildtools/
 * **Build Commands:**
-  * make nanopi_neo_defconfig
+  * make libretech_all_h3_cc_h3_defconfig
   * ARCH=arm CROSS_COMPILE=arm-none-eabi- make

@@ -1,0 +1,4 @@
+config=rpi_4_32b_defconfig
+name=Raspberry Pi 4
+url=https://www.raspberrypi.org
+artifacts=u-boot.bin
