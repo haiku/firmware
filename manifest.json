@@ -36,7 +36,9 @@
 			"https://github.com/haiku/firmware/raw/master/arm/rpi4/README.md",
 			"https://github.com/haiku/firmware/raw/master/arm/rpi4/config.txt",
 			"https://github.com/haiku/firmware/raw/master/arm/rpi4/u-boot.bin",
-			"https://github.com/raspberrypi/firmware/raw/master/boot/start.elf",
+			"https://github.com/raspberrypi/firmware/raw/master/boot/start4.elf",
+			"https://github.com/raspberrypi/firmware/raw/master/boot/fixup4.dat",
+			"https://github.com/raspberrypi/firmware/raw/master/boot/bcm2711-rpi-4-b.dtb",
 			"https://github.com/raspberrypi/firmware/raw/master/boot/LICENCE.broadcom"
 		]
 	},
