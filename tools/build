@@ -6,7 +6,7 @@
 TARGET_ARCH=$1
 
 if [ ! -n "$TARGET_ARCH" ]; then
-	echo "Usage: $0 <arch>"
+	echo "Usage: $0 <arch> [board]"
 	exit 1
 fi
 
@@ -44,8 +44,12 @@ git clone $GIT_REPO $TMP
 GIT_DATE=$(git -C $TMP log -1 --format=%cd)
 GIT_HASH=$(git -C $TMP log -1 --format=%H)
 
-WORK_QUEUE=$(find $TARGET_ARCH/ -maxdepth 1)
-for dir in $(find $TARGET_ARCH/ -mindepth 1 -type d); do
+WORK_QUEUE=$(find $TARGET_ARCH/ -mindepth 1 -type d)
+if [ $# -eq 2 ]; then
+	WORK_QUEUE="$TARGET_ARCH/$2"
+fi
+
+for dir in $WORK_QUEUE; do
 	BUILD_CONFIG="$dir/.build"
 	if [ ! -f $BUILD_CONFIG ]; then
 		echo "Skipping $dir due to lack of build manifest"
