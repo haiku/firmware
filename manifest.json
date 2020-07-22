@@ -77,6 +77,17 @@
 	},
 	{
 		"arch": "arm",
+		"id": "libre_all_h3",
+		"soc": "H3",
+		"name": "Libre Computer Board ALL-H3-CC",
+		"files": [
+			"https://github.com/haiku/firmware/raw/master/arm/libre_all_h3/u-boot.bin",
+			"https://github.com/haiku/firmware/raw/master/arm/libre_all_h3/README.md",
+			"8192,https://github.com/haiku/firmware/raw/master/arm/libre_all_h3/u-boot-sunxi-with-spl.bin"
+		]
+	},
+	{
+		"arch": "arm",
 		"id": "tinkerboard",
 		"soc": "RK3288",
 		"name": "Asus Tinkerboard",
