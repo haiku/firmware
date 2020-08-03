@@ -14,6 +14,7 @@ Directories
 
 * arm - ARMv7 firmwares and u-boot artifacts.
 * arm64 - ARMv8 firmwares and u-boot artifacts.
+* wifi - Firmwares for Wifi controllers not redistributable with Haiku.
 
 Build
 -------------
