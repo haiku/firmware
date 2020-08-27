@@ -1,0 +1,4 @@
+config=qemu-riscv64_defconfig
+name=QEMU RISCV64
+url=https://www.qemu.org
+artifacts=u-boot.bin

@@ -13,6 +13,7 @@ Directories
 
 * arm - ARMv7 firmwares and u-boot artifacts.
 * arm64 - ARMv8 firmwares and u-boot artifacts.
+* riscv64 - RISCV64 firmwares and u-boot artifacts.
 * tools - Tools to compile u-boot sources and record commit info.
 * docs - SoC Documentation
 
