@@ -1,0 +1,4 @@
+config=qemu-x86_64_defconfig
+name=QEMU x86_64
+url=https://www.qemu.org
+artifacts=u-boot.rom
