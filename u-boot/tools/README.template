@@ -20,4 +20,4 @@ This section tracks the u-boot revision within this repo.
 * **Toolchain:** http://cgit.haiku-os.org/buildtools/
 * **Build Commands:**
   * make %%CONFIG%%
-  * ARCH=%%TARGET_ARCH%% CROSS_COMPILE=%%CROSS_TOOL%%- make
+  * ARCH=%%TARGET_ARCH%% CROSS_COMPILE=%%CROSS_TOOL%% make

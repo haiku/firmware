@@ -106,5 +106,5 @@ for dir in $WORK_QUEUE; do
 	sed -i "s^%%FILES%%^$FILES^g" $dir/README.md
 	sed -i "s^%%CONFIG%%^$CONFIG^g" $dir/README.md
 	sed -i "s^%%TARGET_ARCH%%^$TARGET_ARCH^g" $dir/README.md
-	sed -i "s^%%CROSS_TOOL%%^$CROSS_TOOL_PREFIX-^g" $dir/README.md
+	sed -i "s^%%CROSS_TOOL%%^$CROSS_TOOL_PREFIX^g" $dir/README.md
 done
