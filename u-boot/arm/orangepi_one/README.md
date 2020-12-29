@@ -8,15 +8,15 @@ Hardware Information: <http://www.orangepi.org/orangepione>
 
 Source information
 -------------
-> *Last Update:* Thu 16 Jan 2020 08:14:41 PM CST
+> *Last Update:* Mon Dec 28 08:37:11 PM CST 2020
 
 This section tracks the u-boot revision within this repo.
 
 * **Files:**  u-boot.bin u-boot-sunxi-with-spl.bin
   * **License:** GPLv2
   * **Source Code:** git://git.denx.de/u-boot.git
-  * **Date:** Thu Jan 16 13:20:51 2020 -0500
-  * **GIT Hash:** d7bb6aceb2e99a832efbb96f9bf480bf95602192
+  * **Date:** Mon Dec 28 07:44:03 2020 -0500
+  * **GIT Hash:** ab865a8ee5c1a069f72a171270c02c99ccda7bfa
 * **Toolchain:** http://cgit.haiku-os.org/buildtools/
 * **Build Commands:**
   * make orangepi_one_defconfig

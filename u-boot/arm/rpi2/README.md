@@ -8,15 +8,15 @@ Hardware Information: <https://www.raspberrypi.org>
 
 Source information
 -------------
-> *Last Update:* Thu 16 Jan 2020 08:15:58 PM CST
+> *Last Update:* Mon Dec 28 08:38:18 PM CST 2020
 
 This section tracks the u-boot revision within this repo.
 
 * **Files:**  u-boot.bin
   * **License:** GPLv2
   * **Source Code:** git://git.denx.de/u-boot.git
-  * **Date:** Thu Jan 16 13:20:51 2020 -0500
-  * **GIT Hash:** d7bb6aceb2e99a832efbb96f9bf480bf95602192
+  * **Date:** Mon Dec 28 07:44:03 2020 -0500
+  * **GIT Hash:** ab865a8ee5c1a069f72a171270c02c99ccda7bfa
 * **Toolchain:** http://cgit.haiku-os.org/buildtools/
 * **Build Commands:**
   * make rpi_2_defconfig
