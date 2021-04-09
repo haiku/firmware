@@ -8,16 +8,16 @@ Hardware Information: <https://www.qemu.org>
 
 Source information
 -------------
-> *Last Update:* Sat Dec 26 03:13:13 PM CST 2020
+> *Last Update:* Fri Apr  9 06:21:12 PM CDT 2021
 
 This section tracks the u-boot revision within this repo.
 
 * **Files:**  u-boot.bin
   * **License:** GPLv2
   * **Source Code:** git://git.denx.de/u-boot.git
-  * **Date:** Tue Dec 22 08:18:21 2020 -0500
-  * **GIT Hash:** fbc326244ce6fb3bd42353f343a511b512b8e710
+  * **Date:** Fri Apr 9 10:08:52 2021 -0400
+  * **GIT Hash:** a1e95e3805eacca1162f6049dceb9b1d2726cbf5
 * **Toolchain:** http://cgit.haiku-os.org/buildtools/
 * **Build Commands:**
-  * make qemu-riscv64_defconfig
+  * make qemu-riscv64_smode_defconfig
   * ARCH=riscv64 CROSS_COMPILE=riscv64-linux-gnu- make
