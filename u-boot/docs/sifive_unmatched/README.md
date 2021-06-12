@@ -48,4 +48,4 @@ dd if=u-boot.itb of=/dev/mmcblk0p2 bs=4k oflag=direct
 * Copy haiku_loader.efi to /EFI/BOOT/BOOTRISCV64.EFI
 
 **Writing Haiku's filesystem to the SD card:**
-* ```dd if=haiku-minimum.mmc of=/dev/mmcblk0p4 bs=4k oflag=direct
+* ```dd if=haiku-minimum.mmc of=/dev/mmcblk0p4 bs=4k oflag=direct```
