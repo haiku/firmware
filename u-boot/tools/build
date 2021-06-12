@@ -71,9 +71,24 @@ for dir in $WORK_QUEUE; do
 	NAME=$(grep "name=" $BUILD_CONFIG | cut -d "=" -f2)
 	URL=$(grep "url=" $BUILD_CONFIG | cut -d "=" -f2)
 	ARTIFACTS=$(grep "artifacts=" $BUILD_CONFIG | cut -d "=" -f2)
+	PRE_ENV=$(grep "preenv=" $BUILD_CONFIG | cut -d "=" -f2)
 	EXTRA=$(grep "extra=" $BUILD_CONFIG | cut -d "=" -f2)
 
 	echo "Building $NAME..."
+
+	# Set any pre-build environment variables if provided
+	if [ ! -z "$PRE_ENV" ]; then
+		# TODO: This could likely be a lot better
+		for x in $PRE_ENV; do
+			KEY="$(echo $x | cut -d ":" -f1)"
+			VALUE="$(echo $x | cut -d ":" -f2)"
+			if [ "$KEY" == "OPENSBI" ]; then
+				VALUE=$(realpath $VALUE)
+			fi
+			echo "Setting ${KEY} = ${VALUE} per .build"
+			export ${KEY}=${VALUE}
+		done
+	fi
 
 	make -C $TMP clean
 	make -C $TMP $CONFIG
