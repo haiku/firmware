@@ -8,15 +8,15 @@ Hardware Information: <https://www.sifive.com>
 
 Source information
 -------------
-> *Last Update:* Sat Jun 12 11:24:37 AM CDT 2021
+> *Last Update:* Tue Jul 27 10:34:13 AM CDT 2021
 
 This section tracks the u-boot revision within this repo.
 
 * **Files:**  u-boot-spl.bin u-boot.itb
   * **License:** GPLv2
   * **Source Code:** git://git.denx.de/u-boot.git
-  * **Date:** Thu Jun 10 13:27:14 2021 -0400
-  * **GIT Hash:** cf066a20c3ec063d019a991cc32ba8ad95a39780
+  * **Date:** Mon Jul 26 20:57:18 2021 -0400
+  * **GIT Hash:** b70b9b07463db2f6937c7ea6d7fb5122feb7ba1b
 * **Toolchain:** http://cgit.haiku-os.org/buildtools/
 * **Build Commands:**
   * make sifive_unmatched_defconfig
