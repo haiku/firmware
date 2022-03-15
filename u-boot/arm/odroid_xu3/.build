@@ -1,0 +1,4 @@
+config=odroid-xu3_defconfig
+name=ODROID XU3/XU4/HC1/HC2
+url=https://odroid.com
+artifacts=u-boot-dtb.bin
