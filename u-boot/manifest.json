@@ -96,5 +96,19 @@
 			"64,https://github.com/haiku/firmware/raw/master/u-boot/arm/tinkerboard/idbloader.img",
 			"16384,https://github.com/haiku/firmware/raw/master/u-boot/arm/tinkerboard/u-boot-dtb.img"
 		]
+	},
+	{
+		"arch": "arm",
+		"id": "odroid_xu3",
+		"soc": "Exynos5",
+		"name": "ODROID XU3/XU4/HC1/HC2",
+		"files": [
+			"https://github.com/haiku/firmware/raw/master/u-boot/arm/odroid_xu3/README.md",
+			"1,https://github.com/hardkernel/u-boot/raw/odroidxu4-v2017.05/sd_fuse/bl1.bin.hardkernel",
+			"31,https://github.com/hardkernel/u-boot/raw/odroidxu4-v2017.05/sd_fuse/bl2.bin.hardkernel.720k_uboot",
+			"63,https://github.com/haiku/firmware/raw/master/u-boot/arm/odroid_xu3/u-boot-dtb.bin",
+			"1503,https://github.com/hardkernel/u-boot/raw/odroidxu4-v2017.05/sd_fuse/tzsw.bin.hardkernel"
+		]
 	}
+
 ]
