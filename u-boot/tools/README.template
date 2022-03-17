@@ -18,6 +18,7 @@ This section tracks the u-boot revision within this repo.
   * **Date:** %%GIT_DATE%%
   * **GIT Hash:** %%GIT_HASH%%
 * **Toolchain:** http://cgit.haiku-os.org/buildtools/
+  * **Toolchain version:** %%CROSS_TOOL_VERSION%%
 * **Build Commands:**
   * make %%CONFIG%%
   * ARCH=%%TARGET_ARCH%% CROSS_COMPILE=%%CROSS_TOOL%% make

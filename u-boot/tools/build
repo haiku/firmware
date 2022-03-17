@@ -39,18 +39,20 @@ else
 	fi
 fi
 
+CROSS_TOOL_VERSION=$(${CROSS_TOOL_PREFIX}gcc -v 2>&1 | grep "gcc version" | tail -1)
 
 if ! [ -d "$TARGET_ARCH" ]; then
 	echo "Error: Unable to locate ./$TARGET_ARCH directory!"
 	exit 1
 fi
-echo "Beginning $TARGET_ARCH build..."
+echo "Beginning $TARGET_ARCH build with $CROSS_TOOL_VERSION..."
 
 TMP="/tmp/$TARGET_ARCH-build"
 GIT_REPO="git://git.denx.de/u-boot.git"
 
 echo "Cloning sources..."
 git clone $GIT_REPO $TMP
+
 GIT_DATE=$(git -C $TMP log -1 --format=%cd)
 GIT_HASH=$(git -C $TMP log -1 --format=%H)
 
@@ -122,4 +124,5 @@ for dir in $WORK_QUEUE; do
 	sed -i "s^%%CONFIG%%^$CONFIG^g" $dir/README.md
 	sed -i "s^%%TARGET_ARCH%%^$TARGET_ARCH^g" $dir/README.md
 	sed -i "s^%%CROSS_TOOL%%^$CROSS_TOOL_PREFIX^g" $dir/README.md
+	sed -i "s^%%CROSS_TOOL_VERSION%%^$CROSS_TOOL_VERSION^g" $dir/README.md
 done
