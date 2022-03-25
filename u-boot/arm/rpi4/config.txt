@@ -1,3 +1,3 @@
 kernel=u-boot.bin
-uart_2ndstate=1
+uart_2ndstage=1
 enable_uart=1
