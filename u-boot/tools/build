@@ -69,6 +69,7 @@ fi
 echo "Calculating dates..."
 GIT_DATE=$(git -C $TMP log -1 --format=%cd)
 GIT_HASH=$(git -C $TMP log -1 --format=%H)
+GIT_DESC=$(git -C $TMP describe)
 
 echo "Locating work..."
 WORK_QUEUE=$(find $TARGET_ARCH/ -mindepth 1 -type d)
@@ -143,6 +144,7 @@ for dir in $WORK_QUEUE; do
 	sed -i "s^%%GIT_REPO%%^$GIT_REPO^g" $dir/README.md
 	sed -i "s^%%GIT_DATE%%^$GIT_DATE^g" $dir/README.md
 	sed -i "s^%%GIT_HASH%%^$GIT_HASH^g" $dir/README.md
+	sed -i "s^%%GIT_DESC%%^$GIT_DESC^g" $dir/README.md
 	sed -i "s^%%BOARD%%^$NAME^g" $dir/README.md
 	sed -i "s^%%FILES%%^$FILES^g" $dir/README.md
 	sed -i "s^%%CONFIG%%^$CONFIG^g" $dir/README.md
