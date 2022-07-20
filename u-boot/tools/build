@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Compile u-boot for a bunch of ARM boards we want and
+# Compile u-boot for a bunch of devices we want and
 # keep detailed records of where the code came from.
 
 TARGET_ARCH=$1
@@ -28,8 +28,8 @@ else
 	echo "Cross compile build"
 	for i in unknown-haiku none-eabi linux-gnu elf; do
 		if [ -x "$(command -v $TOOLCHAIN_ARCH-$i-ld)" ]; then
-			echo "Found $i cross compiler!"
 			CROSS_TOOL_PREFIX=$TOOLCHAIN_ARCH-$i-
+			echo "Found $i cross compiler! ($CROSS_TOOL_PREFIX)"
 			break;
 		fi
 	done
@@ -53,15 +53,18 @@ GIT_REPO="git://git.denx.de/u-boot.git"
 echo "Cloning sources..."
 git clone $GIT_REPO $TMP
 
+echo "Calculating dates..."
 GIT_DATE=$(git -C $TMP log -1 --format=%cd)
 GIT_HASH=$(git -C $TMP log -1 --format=%H)
 
+echo "Locating work..."
 WORK_QUEUE=$(find $TARGET_ARCH/ -mindepth 1 -type d)
 if [ $# -eq 2 ]; then
 	WORK_QUEUE="$TARGET_ARCH/$2"
 fi
 
 for dir in $WORK_QUEUE; do
+	echo "Processing $dir..."
 	BUILD_CONFIG="$dir/.build"
 	if [ ! -f $BUILD_CONFIG ]; then
 		echo "Skipping $dir due to lack of build manifest"
@@ -75,6 +78,17 @@ for dir in $WORK_QUEUE; do
 	ARTIFACTS=$(grep "artifacts=" $BUILD_CONFIG | cut -d "=" -f2)
 	PRE_ENV=$(grep "preenv=" $BUILD_CONFIG | cut -d "=" -f2)
 	EXTRA=$(grep "extra=" $BUILD_CONFIG | cut -d "=" -f2)
+	OPENSBI_INFO=$(grep "opensbi=" $BUILD_CONFIG | cut -d "=" -f2)
+
+	# Obtain an OpenSBI payload if requested (riscv stuff)
+	if [ ! -z "$OPENSBI_INFO" ]; then
+		OPENSBI_VERSION=$(echo "$OPENSBI_INFO" | cut -d'/' -f1)
+		OPENSBI_PLATFORM=$(echo "$OPENSBI_INFO" | cut -d'/' -f2)
+
+		echo "Obtaining OpenSBI $OPENSBI_VERSION for $OPENSBI_PLATFORM..."
+		export OPENSBI=$(tools/obtain_sbi ${OPENSBI_VERSION} ${OPENSBI_PLATFORM})
+		echo "OPENSBI ${OPENSBI} obtained."
+	fi
 
 	echo "Building $NAME..."
 
@@ -84,9 +98,6 @@ for dir in $WORK_QUEUE; do
 		for x in $PRE_ENV; do
 			KEY="$(echo $x | cut -d ":" -f1)"
 			VALUE="$(echo $x | cut -d ":" -f2)"
-			if [ "$KEY" == "OPENSBI" ]; then
-				VALUE=$(realpath $VALUE)
-			fi
 			echo "Setting ${KEY} = ${VALUE} per .build"
 			export ${KEY}=${VALUE}
 		done
