@@ -9,10 +9,11 @@ BASE=/tmp/opensbi
 VERSION=$1
 PLATFORM=$2
 
+mkdir -p ${BASE}/v${VERSION}/riscv64/${PLATFORM}
+
 wget https://github.com/riscv-software-src/opensbi/releases/download/v${VERSION}/opensbi-${VERSION}-rv-bin.tar.xz -O ${BASE}/sbi.tar.xz >${BASE}/opensbi_obtain.log 2>&1
 
-mkdir -p /tmp/opensbi/v${VERSION}/riscv64/${PLATFORM}
 cd ${BASE}/v${VERSION}/riscv64/${PLATFORM}
 tar xf ${BASE}/sbi.tar.xz --transform='s,.*/,,' opensbi-${VERSION}-rv-bin/share/opensbi/lp64/${PLATFORM}/firmware/fw_dynamic.bin
-rm ${BASE}/sbi.tar.xz
+rm -f ${BASE}/sbi.tar.xz
 echo ${BASE}/v${VERSION}/riscv64/${PLATFORM}/fw_dynamic.bin
