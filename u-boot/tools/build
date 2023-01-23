@@ -4,9 +4,11 @@
 # keep detailed records of where the code came from.
 
 TARGET_ARCH=$1
+BOARD=$2
+COMMIT=$3
 
 if [ ! -n "$TARGET_ARCH" ]; then
-	echo "Usage: $0 <arch> [board]"
+	echo "Usage: $0 <arch> [board] [commit]"
 	exit 1
 fi
 
@@ -50,8 +52,19 @@ echo "Beginning $TARGET_ARCH build with $CROSS_TOOL_VERSION..."
 TMP="/tmp/$TARGET_ARCH-build"
 GIT_REPO="git://git.denx.de/u-boot.git"
 
-echo "Cloning sources..."
-git clone $GIT_REPO $TMP
+if ! [ -d "$TMP" ]; then
+	echo "Cloning sources..."
+	git clone $GIT_REPO $TMP
+else
+	echo "Pulling updates..."
+	# hint: Might want to comment this out if you're git blameing on u-boot in $TMP
+	git -C $TMP pull --rebase
+fi
+
+if [ $# -ge 2 ]; then
+	echo "Checking out u-boot $COMMIT"
+	git -C $TMP checkout $COMMIT
+fi
 
 echo "Calculating dates..."
 GIT_DATE=$(git -C $TMP log -1 --format=%cd)
@@ -59,8 +72,8 @@ GIT_HASH=$(git -C $TMP log -1 --format=%H)
 
 echo "Locating work..."
 WORK_QUEUE=$(find $TARGET_ARCH/ -mindepth 1 -type d)
-if [ $# -eq 2 ]; then
-	WORK_QUEUE="$TARGET_ARCH/$2"
+if [ $# -ge 2 ]; then
+	WORK_QUEUE="$TARGET_ARCH/$BOARD"
 fi
 
 for dir in $WORK_QUEUE; do
