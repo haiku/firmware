@@ -1,0 +1,5 @@
+config=starfive_visionfive2_defconfig
+name=StarFive VisionFive V2
+url=https://www.starfivetech.com/en/site/boards
+opensbi=1.2/generic
+artifacts=u-boot-spl.bin u-boot.itb
