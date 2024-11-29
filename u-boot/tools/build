@@ -139,7 +139,7 @@ for dir in $WORK_QUEUE; do
 	# Populate README.md
 	cp tools/README.template $dir/README.md
 	sed -i "s^%%URL%%^$URL^g" $dir/README.md
-	sed -i "s^%%DATE%%^$(date)^g" $dir/README.md
+	sed -i "s^%%DATE%%^$(TZ=UTC LANG=en_us date)^g" $dir/README.md
 	sed -i "s^%%GIT_REPO%%^$GIT_REPO^g" $dir/README.md
 	sed -i "s^%%GIT_DATE%%^$GIT_DATE^g" $dir/README.md
 	sed -i "s^%%GIT_HASH%%^$GIT_HASH^g" $dir/README.md
