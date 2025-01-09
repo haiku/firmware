@@ -8,17 +8,17 @@ Hardware Information: <https://www.sifive.com>
 
 Source information
 -------------
-> *Last Update:* Mon Jan 23 07:59:17 PM CST 2023
+> *Last Update:* Wed Jan  8 07:42:14 PM CST 2025
 
 This section tracks the u-boot revision within this repo.
 
 * **Files:**  u-boot-spl.bin u-boot.itb
   * **License:** GPLv2
   * **Source Code:** git://git.denx.de/u-boot.git
-  * **Date:** Mon Jan 23 19:58:29 2023 -0600
-  * **GIT Hash:** 1340ba6888ed382a6aa45d0adf427fe71558ae02
+  * **Date:** Wed Jan 8 14:19:22 2025 -0600
+  * **GIT Hash:** 3bfd12008bef1a8353e7ceaca2cb06cf388527ed
 * **Toolchain:** http://cgit.haiku-os.org/buildtools/
-  * **Toolchain version:** gcc version 11.3.0 (GCC) 
+  * **Toolchain version:** gcc version 13.3.0 (GCC) 
 * **Build Commands:**
   * make sifive_unmatched_defconfig
   * ARCH=riscv64 CROSS_COMPILE=riscv64-unknown-haiku- make
