@@ -8,17 +8,17 @@ Hardware Information: <https://www.starfivetech.com/en/site/boards>
 
 Source information
 -------------
-> *Last Update:* Tue Dec  5 12:54:32 PM CST 2023
+> *Last Update:* Thu Apr 17 08:18:40 PM CDT 2025
 
 This section tracks the u-boot revision within this repo.
 
 * **Files:**  u-boot-spl.bin u-boot.itb
   * **License:** GPLv2
   * **Source Code:** git://git.denx.de/u-boot.git
-  * **Date:** Mon Dec 4 13:46:56 2023 -0500
-  * **GIT Hash:** 2f0282922b2c458eea7f85c500a948a587437b63
+  * **Date:** Thu Apr 17 07:52:02 2025 -0600
+  * **GIT Hash:** 278be62c052f3a5749c3c7a57bcd307b82dcdc2d
 * **Toolchain:** http://cgit.haiku-os.org/buildtools/
-  * **Toolchain version:** gcc version 12.2.0 (GCC) 
+  * **Toolchain version:** gcc version 14.2.0 (GCC) 
 * **Build Commands:**
   * make starfive_visionfive2_defconfig
   * ARCH=riscv64 CROSS_COMPILE=riscv64-linux-gnu- make
