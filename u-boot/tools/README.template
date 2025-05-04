@@ -16,7 +16,7 @@ This section tracks the u-boot revision within this repo.
   * **License:** GPLv2
   * **Source Code:** %%GIT_REPO%%
   * **Date:** %%GIT_DATE%%
-  * **GIT Hash:** %%GIT_HASH%%
+  * **GIT Commit:** %%GIT_HASH%% %%GIT_DESC%%
 * **Toolchain:** http://cgit.haiku-os.org/buildtools/
   * **Toolchain version:** %%CROSS_TOOL_VERSION%%
 * **Build Commands:**
