@@ -1,5 +1,5 @@
 config=sifive_unmatched_defconfig
 name=SiFive Unmatched
 url=https://www.sifive.com
-opensbi=1.0/generic
+opensbi=1.6/generic
 artifacts=u-boot-spl.bin u-boot.itb
