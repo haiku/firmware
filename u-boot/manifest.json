@@ -111,6 +111,16 @@
 			"63,https://github.com/haiku/firmware/raw/master/u-boot/arm/odroid_xu3/u-boot-dtb.bin",
 			"1503,https://github.com/hardkernel/u-boot/raw/odroidxu4-v2017.05/sd_fuse/tzsw.bin.hardkernel"
 		]
+	},
+	{
+		"arch": "arm64",
+		"id": "orangepi_zero2",
+		"soc": "H616",
+		"name": "OrangePi Zero2",
+		"files": [
+			"https://github.com/haiku/firmware/raw/master/u-boot/arm64/orangepi_zero_2/u-boot.bin",
+			"https://github.com/haiku/firmware/raw/master/u-boot/arm64/orangepi_zero_2/README.md",
+			"8192,https://github.com/haiku/firmware/raw/master/u-boot/arm64/orangepi_zero_2/u-boot-sunxi-with-spl.bin"
+		]
 	}
-
 ]

@@ -1,0 +1,4 @@
+config=orangepi_zero2_defconfig
+name=OrangePi Zero2
+url=http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-Zero-2.html
+artifacts=u-boot.bin u-boot-sunxi-with-spl.bin
