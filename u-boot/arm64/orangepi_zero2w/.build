@@ -1,0 +1,5 @@
+config=orangepi_zero2w_defconfig
+name=Orange Pi Zero 2W
+url=http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-Zero-2W.html
+bl31_platform=sun50i_a64
+artifacts=u-boot-sunxi-with-spl.bin

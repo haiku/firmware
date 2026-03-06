@@ -1,4 +1,5 @@
 config=qemu_arm64_defconfig
 name=QEMU ARM64
 url=https://www.qemu.org
+bl31_platform=qemu
 artifacts=u-boot.bin

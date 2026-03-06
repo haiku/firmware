@@ -1,14 +1,14 @@
-NanoPi NEO 2 u-boot binaries
+Orange Pi Zero 2W u-boot binaries
 ===================
 
-This directory contains NanoPi NEO 2 u-boot binaries.
+This directory contains Orange Pi Zero 2W u-boot binaries.
 These binaries were compiled from the stock u-boot sources.
 
-Hardware Information: <http://www.friendlyarm.net/products/nanopi-neo>
+Hardware Information: <http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-Zero-2W.html>
 
 Source information
 -------------
-> *Last Update:* Fri Mar  6 09:25:04 CST 2026
+> *Last Update:* Fri Mar  6 09:26:38 CST 2026
 
 This section tracks the u-boot revision within this repo.
 
@@ -20,5 +20,5 @@ This section tracks the u-boot revision within this repo.
 * **Toolchain:** http://cgit.haiku-os.org/buildtools/
   * **Toolchain version:** gcc version 15.1.0 (GCC) 
 * **Build Commands:**
-  * make nanopi_neo2_defconfig
+  * make orangepi_zero2w_defconfig
   * ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make

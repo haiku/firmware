@@ -1,4 +1,5 @@
 config=nanopi-m4-rk3399_defconfig
 name=NanoPi M4
 url=http://wiki.friendlyarm.com/wiki/index.php/NanoPi_M4
+bl31_platform=rk3399
 artifacts=u-boot.bin u-boot-spl-dtb.bin

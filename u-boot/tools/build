@@ -52,9 +52,9 @@ echo "Beginning $TARGET_ARCH build with $CROSS_TOOL_VERSION..."
 TMP="/tmp/$TARGET_ARCH-build"
 GIT_REPO="git://git.denx.de/u-boot.git"
 
-if ! [ -d "$TMP" ]; then
+if ! [ -d "$TMP/u-boot" ]; then
 	echo "Cloning sources..."
-	git clone $GIT_REPO $TMP
+	git clone $GIT_REPO $TMP/u-boot
 else
 	echo "Pulling updates..."
 	# hint: Might want to comment this out if you're git blameing on u-boot in $TMP
@@ -63,12 +63,12 @@ fi
 
 if [ $# -ge 2 ]; then
 	echo "Checking out u-boot $COMMIT"
-	git -C $TMP checkout $COMMIT
+	git -C $TMP/u-boot checkout $COMMIT
 fi
 
 echo "Calculating dates..."
-GIT_DATE=$(git -C $TMP log -1 --format=%cd)
-GIT_HASH=$(git -C $TMP log -1 --format=%H)
+GIT_DATE=$(git -C $TMP/u-boot log -1 --format=%cd)
+GIT_HASH=$(git -C $TMP/u-boot log -1 --format=%H)
 
 echo "Locating work..."
 WORK_QUEUE=$(find $TARGET_ARCH/ -mindepth 1 -type d)
@@ -92,6 +92,22 @@ for dir in $WORK_QUEUE; do
 	PRE_ENV=$(grep "preenv=" $BUILD_CONFIG | cut -d "=" -f2)
 	EXTRA=$(grep "extra=" $BUILD_CONFIG | cut -d "=" -f2)
 	OPENSBI_INFO=$(grep "opensbi=" $BUILD_CONFIG | cut -d "=" -f2)
+	BL31_PLATFORM=$(grep "bl31_platform=" $BUILD_CONFIG | cut -d "=" -f2)
+
+	unset BL31
+	unset OPENSBI
+
+	# Build BL31 if needed (arm stuff)
+	if [ ! -z "$BL31_PLATFORM" ]; then
+		if [ ! -d "$TMP/trusted-firmware-a" ]; then
+			git clone https://github.com/TrustedFirmware-A/trusted-firmware-a.git $TMP/trusted-firmware-a
+		fi
+		if [ ! -f "$TMP/trusted-firmware-a/build/$BL31_PLATFORM/debug/bl31.bin" ]; then
+			CROSS_COMPILE=$CROSS_TOOL_PREFIX make -C $TMP/trusted-firmware-a PLAT=$BL31_PLATFORM DEBUG=1 bl31
+			echo "Built BL31 per config for $BL31_PLATFORM..."
+		fi
+		export BL31=$TMP/trusted-firmware-a/build/$BL31_PLATFORM/debug/bl31.bin
+	fi
 
 	# Obtain an OpenSBI payload if requested (riscv stuff)
 	if [ ! -z "$OPENSBI_INFO" ]; then
@@ -116,13 +132,13 @@ for dir in $WORK_QUEUE; do
 		done
 	fi
 
-	make -C $TMP clean
-	make -C $TMP $CONFIG
+	make -C $TMP/u-boot clean
+	make -C $TMP/u-boot $CONFIG
 	if [ $? -ne 0 ]; then
 		echo "Error configuring $dir"
 		continue;
 	fi
-	ARCH=$TARGET_ARCH CROSS_COMPILE=$CROSS_TOOL_PREFIX make -C $TMP -j2
+	ARCH=$TARGET_ARCH CROSS_COMPILE=$CROSS_TOOL_PREFIX make -C $TMP/u-boot -j2
 	if [ $? -ne 0 ]; then
 		echo "Error building $dir"
 		continue;
@@ -132,7 +148,7 @@ for dir in $WORK_QUEUE; do
 	FILES=""
 	for x in $ARTIFACTS; do
 		echo "Searching for $x..."
-		find $TMP -name "$x" -exec cp -f {} $dir/ \;
+		find $TMP/u-boot -name "$x" -exec cp -f {} $dir/ \;
 		FILES="$FILES $x"
 	done
 

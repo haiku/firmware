@@ -1,4 +1,5 @@
 config=nanopi_neo2_defconfig
 name=NanoPi NEO 2
 url=http://www.friendlyarm.net/products/nanopi-neo
+bl31_platform=sun50i_a64
 artifacts=u-boot-sunxi-with-spl.bin

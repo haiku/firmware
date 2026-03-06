@@ -1,4 +1,5 @@
 config=libretech_all_h3_cc_h5_defconfig
 name=Libre ALL-H5-CC
 url=https://libre.computer/products/boards/all-h3-cc/
+bl31_platform=sun50i_a64
 artifacts=u-boot.bin u-boot-sunxi-with-spl.bin
