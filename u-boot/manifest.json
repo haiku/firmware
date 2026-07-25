@@ -111,6 +111,16 @@
 			"63,https://github.com/haiku/firmware/raw/master/u-boot/arm/odroid_xu3/u-boot-dtb.bin",
 			"1503,https://github.com/hardkernel/u-boot/raw/odroidxu4-v2017.05/sd_fuse/tzsw.bin.hardkernel"
 		]
+	},
+	{
+		"arch": "arm64",
+		"id": "pinephone",
+		"soc": "Allwinner A64",
+		"name": "Pine64 PinePhone",
+		"files": [
+			"https://github.com/haiku/firmware/raw/master/u-boot/arm64/pinephone/README.md",
+			"https://github.com/haiku/firmware/raw/master/u-boot/arm64/pinephone/u-boot.bin"
+			"8192,https://github.com/haiku/firmware/raw/master/u-boot/arm64/pinephone/u-boot-sunxi-with-spl.bin"
+		]
 	}
-
 ]

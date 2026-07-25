@@ -1,0 +1,5 @@
+config=pinephone_defconfig
+name=Pine64 PinePhone
+url=https://pine64.org/devices/pinephone/
+bl31_platform=sun50i_a64
+artifacts=u-boot.bin u-boot-sunxi-with-spl.bin
