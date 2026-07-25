@@ -119,7 +119,7 @@
 		"name": "Pine64 PinePhone",
 		"files": [
 			"https://github.com/haiku/firmware/raw/master/u-boot/arm64/pinephone/README.md",
-			"https://github.com/haiku/firmware/raw/master/u-boot/arm64/pinephone/u-boot.bin"
+			"https://github.com/haiku/firmware/raw/master/u-boot/arm64/pinephone/u-boot.bin",
 			"8192,https://github.com/haiku/firmware/raw/master/u-boot/arm64/pinephone/u-boot-sunxi-with-spl.bin"
 		]
 	}
