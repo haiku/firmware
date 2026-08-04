@@ -31,7 +31,7 @@
 	},
 	{
 		"arch": "arm",
-		"id": "rpi4",
+		"id": "rpi4-32",
 		"soc": "BCM2711",
 		"name": "Raspberry Pi 4",
 		"files": [
@@ -121,6 +121,21 @@
 			"https://github.com/haiku/firmware/raw/master/u-boot/arm64/pinephone/README.md",
 			"https://github.com/haiku/firmware/raw/master/u-boot/arm64/pinephone/u-boot.bin",
 			"8192,https://github.com/haiku/firmware/raw/master/u-boot/arm64/pinephone/u-boot-sunxi-with-spl.bin"
+		]
+	},
+	{
+		"arch": "arm64",
+		"id": "rpi4",
+		"soc": "BCM2711",
+		"name": "Raspberry Pi 4",
+		"files": [
+			"https://github.com/haiku/firmware/raw/master/u-boot/arm64/rpi4/README.md",
+			"https://github.com/haiku/firmware/raw/master/u-boot/arm64/rpi4/config.txt",
+			"https://github.com/haiku/firmware/raw/master/u-boot/arm64/rpi4/u-boot.bin",
+			"https://github.com/raspberrypi/firmware/raw/master/boot/start4.elf",
+			"https://github.com/raspberrypi/firmware/raw/master/boot/fixup4.dat",
+			"https://github.com/raspberrypi/firmware/raw/master/boot/bcm2711-rpi-4-b.dtb",
+			"https://github.com/raspberrypi/firmware/raw/master/boot/LICENCE.broadcom"
 		]
 	}
 ]
